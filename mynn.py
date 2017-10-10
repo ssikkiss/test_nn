@@ -22,14 +22,14 @@ class Data:
         self.loss_list = []
         self.init_network()
 
-        self.read_train_images( 'train-images-idx3-ubyte')
-        self.read_train_labels( 'train-labels-idx1-ubyte')
+        self.read_train_images( 'train-images')
+        self.read_train_labels( 'train-labels')
 
         self.train_data = np.append( self.train_img_list, self.train_label_list, axis = 1 )
 
 
-        self.read_test_images('t10k-images-idx3-ubyte')
-        self.read_test_labels('t10k-labels-idx1-ubyte')
+        self.read_test_images('t10k-images')
+        self.read_test_labels('t10k-labels')
 
     def predict(self):
         hidden_layer1 = np.maximum(0, np.matmul(self.test_img_list, self.W1) + self.b1)
